@@ -113,6 +113,7 @@ class _HomePageState extends State<HomePage> {
       });
 
       await FlutterNfcKit.finish();
+      if (!mounted) return;
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(content: Text('Tag lida com sucesso!')),
       );
